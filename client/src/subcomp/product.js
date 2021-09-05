@@ -6,13 +6,19 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 export default function Product(props) {
   var { data } = props;
   const [quantity, setQuantity] = useState(0);
+  const [disable, setDisable] = useState(true);
 
   useEffect(() => {
-    effect;
+    if (quantity <= 0) {
+        setDisable(true);
+    } else {
+        setDisable(false);
+    }
     return () => {
-      cleanup;
+        setQuantity(0);
+        setDisable(false);
     };
-  }, [input]);
+  }, [quantity, disable]);
 
   var removeClick = () => {
     if (quantity <= 0) {
@@ -54,7 +60,7 @@ export default function Product(props) {
             alignItems="center"
           >
             <Grid item>
-              <IconButton aria-label="remove" onClick={removeClick}>
+              <IconButton aria-label="remove" onClick={removeClick} disable={disable}>
                 <RemoveCircleOutlineIcon />
               </IconButton>
             </Grid>
