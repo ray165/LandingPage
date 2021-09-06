@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Content from './subcomp/content'
 
 function App() {
   return (
     <div className="App">
+      <Content />
     </div>
   );
 }

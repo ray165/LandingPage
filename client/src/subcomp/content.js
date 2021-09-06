@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Typography, TextField} from "@material-ui/core/";
+import { Typography, TextField, Button} from "@material-ui/core/";
 import DOMPurify from "dompurify";
 import MotionPicture from './motionPic';
 import Product from './product'
@@ -75,7 +75,8 @@ function Content() {
           name="email"
           error={inputError}
           helperText={errText}
-        />
+        >
+        </TextField>
         <Button variant="contained" color="primary" onClick={checkValid}>
           Submit
         </Button>
